@@ -105,14 +105,3 @@ class SpotService:
 
         except Exception as e:
             self.logger.error(f"Failed to update cache for tickers '{tickers}': {e}")
-
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-
-# Example usage
-spot_service = SpotService()
-result = spot_service.get_close_price(['SMT.L', 'AAPL', 'ORCL', 'GOOGL'])
-logging.info(f"Close prices: {result}")
-
-print(spot_service.get_live_price(['SMT.L', 'GOOGL']))

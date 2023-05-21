@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'options_api'
+    'options_api',
+    'marketdata'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mrquant.urls'
+
+TEST_DISCOVER_PATTERN = 'test*.py'
 
 TEMPLATES = [
     {
