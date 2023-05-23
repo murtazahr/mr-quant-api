@@ -48,7 +48,8 @@ class SpotService:
         # Return spot_map if it is not empty, otherwise, return the result of get_close_price for all tickers
         return spot_map or self.get_close_price(tickers, current_date)
 
-    def get_close_price(self, tickers: List[str] = None, date: datetime.date = datetime.date.today()):
+    def get_close_price(self, tickers: List[str] = None,
+                        date: datetime.date = datetime.date.today() - datetime.timedelta(days=1)):
         """
         Get the close prices for the given tickers on the specified date.
         Args:
