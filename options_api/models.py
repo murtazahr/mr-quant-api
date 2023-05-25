@@ -1,13 +1,13 @@
 import quantsbin.derivativepricing as qbdp
-from typing import List
-from enums import PricingModel
-from utils import date_utils
+from typing import List, Tuple
+from .enums import PricingModel
+from .utils import date_utils
 
 
 # Create your models here.
 class PricingEngine:
     def __init__(self, model: PricingModel, spot: float, fwd: float,
-                 rf_rate: float, volatility: float, yield_div: float, div_list: List[(str, float)],
+                 rf_rate: float, volatility: float, yield_div: float, div_list: List[Tuple[str, float]],
                  pricing_date: str = date_utils.current_dt_as_string(date_utils.QUANTSBIN_FORMAT)):
         self.model = model
         self.spot = spot
