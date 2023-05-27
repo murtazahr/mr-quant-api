@@ -4,13 +4,13 @@ from .enums import MarketType
 
 
 # Create your models here.
-class PricingEngine:
+class PricingContext:
     def __init__(self, market_type: MarketType, pos_date: str):
         self.market_type = market_type
         self.pos_date = pos_date
 
 
 class PricingPackage:
-    def __init__(self, instruments: List[qbdp.EqOption], pricing_engine: PricingEngine):
+    def __init__(self, instruments: List[qbdp.EqOption], pricing_context: PricingContext):
         self.instruments = instruments
-        self.pricing_engine = pricing_engine
+        self.pricing_context = pricing_context

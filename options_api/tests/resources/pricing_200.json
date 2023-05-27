@@ -15,7 +15,7 @@
       "derivative_type": "Vanilla Option"
     }
   ],
-  "pricing_engine": {
+  "pricing_context": {
   "market_type": "CloseMarket",
   "pos_date": "2023-05-27"
 }

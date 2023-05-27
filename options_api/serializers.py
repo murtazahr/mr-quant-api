@@ -14,11 +14,11 @@ class EqOptionSerializer(serializers.Serializer):
         return qbdp.EqOption(**validated_data)
 
 
-class PricingEngineSerializer(serializers.Serializer):
+class PricingContextSerializer(serializers.Serializer):
     market_type = serializers.ChoiceField(choices=[(member.value, member.name) for member in MarketType])
     pos_date = serializers.CharField()
 
 
 class PricingPackageSerializer(serializers.Serializer):
     instruments = EqOptionSerializer(many=True)
-    pricing_engine = PricingEngineSerializer(many=False)
+    pricing_context = PricingContextSerializer(many=False)
