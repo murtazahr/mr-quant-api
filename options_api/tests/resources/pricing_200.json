@@ -1,0 +1,23 @@
+{
+  "instruments": [
+    {
+      "option_type": "Call",
+      "expiry_type": "European",
+      "strike": 180.5,
+      "expiry_date": "20230723",
+      "derivative_type": "Vanilla Option"
+    },
+    {
+      "option_type": "Call",
+      "expiry_type": "European",
+      "strike": 180.5,
+      "expiry_date": "20230723",
+      "derivative_type": "Vanilla Option"
+    }
+  ],
+  "pricing_engine": {
+  "market_type": "CloseMarket",
+  "pos_date": "2023-05-27"
+}
+
+}

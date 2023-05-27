@@ -1,6 +1,6 @@
 from rest_framework import serializers
 import quantsbin.derivativepricing as qbdp
-from .enums import PricingModel
+from .enums import MarketType
 
 
 class EqOptionSerializer(serializers.Serializer):
@@ -14,20 +14,9 @@ class EqOptionSerializer(serializers.Serializer):
         return qbdp.EqOption(**validated_data)
 
 
-class DivListTupleSerializer(serializers.Serializer):
-    element1: serializers.CharField()
-    element2: serializers.FloatField()
-
-
 class PricingEngineSerializer(serializers.Serializer):
-    model = serializers.ChoiceField(choices=[(member.value, member.name) for member in PricingModel])
-    spot = serializers.FloatField()
-    fwd = serializers.FloatField()
-    rf_rate = serializers.FloatField()
-    volatility = serializers.FloatField()
-    yield_div = serializers.FloatField()
-    div_list = DivListTupleSerializer(many=True)
-    pricing_date = serializers.CharField()
+    market_type = serializers.ChoiceField(choices=[(member.value, member.name) for member in MarketType])
+    pos_date = serializers.CharField()
 
 
 class PricingPackageSerializer(serializers.Serializer):
